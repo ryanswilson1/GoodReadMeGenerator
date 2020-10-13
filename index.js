@@ -65,17 +65,17 @@ function writeToFile(fileName, data) {
             return console.log(err);
         }
         console.log("Generated: " + fileName);
-    })
+    });
 
-}
+};
 
 // function to initialize program
 function init() {
     inquirer.prompt(questions)
         .then(function (data) {
             writeToFile("GeneratedREADME.md", generatorMarkdown(data));
-        })
-}
+        });
+};
 
 // function call to initialize program
 init();
