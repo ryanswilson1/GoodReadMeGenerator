@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
-const axios = require("axios");
-const fs = require('fs');
-const path = require('path');
+const generatorMarkdown = require("./utils/generateMarkdown")
+const fs = require("fs");
+
 // array of questions for user
 const questions = [
 
@@ -54,13 +54,18 @@ const questions = [
         type: "input",
         message: "List instructions for testing the application",
         name: "test"
+    },
+    {
+        type: "input",
+        message: "Please provide any additional questions you may have",
+        name: "questions"
     }
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeFile("./tester/" + fileName, data, function (err) {
+    fs.writeFile(fileName, data, function (err) {
         if (err) {
             return console.log(err);
         }
