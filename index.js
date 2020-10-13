@@ -50,18 +50,21 @@ const questions = [
 // function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeFile("./demo/" + fileName, data, function (err) {
+    fs.writeFile("./tester/" + fileName, data, function (err) {
         if (err) {
             return console.log(err);
         }
-        console.log("Successfully wrote: " + fileName);
+        console.log("Generated: " + fileName);
     })
 
 }
 
 // function to initialize program
 function init() {
-
+    inquirer.prompt(questions)
+        .then(function (data) {
+            writeToFile("GeneratedREADME.md", generatorMarkdown(data));
+        })
 }
 
 // function call to initialize program
