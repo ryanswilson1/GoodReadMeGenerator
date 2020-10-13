@@ -12,6 +12,11 @@ const questions = [
     },
     {
         type: "input",
+        message: "What is your email address?",
+        name: "email",
+    },
+    {
+        type: "input",
         message: "What is the title of your project?",
         name: "projectTitle"
     },
@@ -34,6 +39,11 @@ const questions = [
         type: "input",
         message: "Provide Usage Information",
         name: "usageInformation"
+    },
+    {
+        type: "input",
+        message: "Provide Licenseing Information",
+        name: "licensing"
     },
     {
         type: "input",
